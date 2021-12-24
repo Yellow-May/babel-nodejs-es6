@@ -3,9 +3,9 @@
 	"version": "1.0.0",
 	"private": true,
 	"scripts": {
-		"babel:node": "babel-node --presets=@babel/env",
+		"babel:node": "babel-node",
 		"dev": "nodemon --exec yarn babel:node -- src",
-		"babel:build": "babel src --out-dir server",
+		"babel:build": "./node_modules/.bin/babel src --out-dir server",
 		"server:clean": "rm -rf server",
 		"start": "node server",
 		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn babel:build"
