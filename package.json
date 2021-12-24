@@ -5,7 +5,7 @@
 	"scripts": {
 		"babel:node": "babel-node --presets=@babel/env",
 		"dev": "nodemon --exec yarn babel:node -- src",
-		"babel:build": "babel src --out-dir server",
+		"babel:build": "./node_modules/.bin/babel src --out-dir server",
 		"server:clean": "rm -rf server",
 		"start": "node server",
 		"heroku-prebuild": "yarn babel:build"
