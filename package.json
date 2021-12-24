@@ -6,7 +6,7 @@
 		"babel:node": "babel-node",
 		"dev": "nodemon --exec yarn babel:node -- src",
 		"babel:build": "./node_modules/.bin/babel src --out-dir server",
-		"server:clean": "rm -rf server",
+		"clean": "rm -rf server",
 		"start": "node server",
 		"heroku-postbuild": "YARN_CONFIG_PRODUCTION=false yarn babel:build"
 	},
@@ -18,7 +18,6 @@
 		"@babel/cli": "^7.16.0",
 		"@babel/core": "^7.16.5",
 		"@babel/node": "^7.16.5",
-		"@babel/plugin-transform-runtime": "^7.16.5",
 		"@babel/preset-env": "^7.16.5",
 		"nodemon": "^2.0.15"
 	},
