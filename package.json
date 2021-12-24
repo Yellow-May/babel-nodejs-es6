@@ -1,0 +1,22 @@
+{
+	"name": "node-es6",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"babel:node": "babel-node --presets=@babel/env",
+		"dev": "nodemon --exec yarn babel:node -- src",
+		"babel:build": "./node_modules/.bin/babel src --out-dir server",
+		"server:clean": "rm -rf server",
+		"start": "yarn server:clean && yarn babel:build && node server"
+	},
+	"dependencies": {
+		"express": "^4.17.2"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.16.0",
+		"@babel/core": "^7.16.5",
+		"@babel/node": "^7.16.5",
+		"@babel/preset-env": "^7.16.5",
+		"nodemon": "^2.0.15"
+	}
+}
