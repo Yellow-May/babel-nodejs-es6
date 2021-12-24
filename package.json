@@ -2,13 +2,14 @@
 	"name": "node-es6",
 	"version": "1.0.0",
 	"private": true,
+	"main": "index.js",
 	"scripts": {
 		"babel:node": "babel-node --presets=@babel/env",
 		"dev": "nodemon --exec yarn babel:node -- src",
 		"babel:build": "./node_modules/.bin/babel src --out-dir server",
 		"server:clean": "rm -rf server",
 		"start": "node server",
-		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn server:clean && yarn babel:build"
+		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn babel:build"
 	},
 	"dependencies": {
 		"express": "^4.17.2"
