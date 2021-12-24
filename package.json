@@ -11,6 +11,7 @@
 		"heroku-postbuild": "YARN_CONFIG_PRODUCTION=false yarn babel:build"
 	},
 	"dependencies": {
+		"core-js": "^3.20.1",
 		"express": "^4.17.2"
 	},
 	"devDependencies": {
