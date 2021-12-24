@@ -7,7 +7,8 @@
 		"dev": "nodemon --exec yarn babel:node -- src",
 		"babel:build": "./node_modules/.bin/babel src --out-dir server",
 		"server:clean": "rm -rf server",
-		"start": "yarn server:clean && yarn babel:build && node server"
+		"start": "node server",
+		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn server:clean && yarn babel:build"
 	},
 	"dependencies": {
 		"express": "^4.17.2"
