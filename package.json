@@ -2,7 +2,7 @@
 	"name": "node-es6",
 	"version": "1.0.0",
 	"private": true,
-	"main": "index.js",
+	"main": "server/index.js",
 	"scripts": {
 		"babel:node": "babel-node --presets=@babel/env",
 		"dev": "nodemon --exec yarn babel:node -- src",
