@@ -1,28 +1,39 @@
 {
-	"name": "node-es6",
-	"version": "1.0.0",
-	"private": true,
-	"scripts": {
-		"babel:node": "babel-node",
-		"dev": "nodemon --exec yarn babel:node -- src",
-		"babel:build": "./node_modules/.bin/babel src --out-dir server",
-		"clean": "rm -rf server",
-		"start": "node server",
-		"heroku-postbuild": "YARN_CONFIG_PRODUCTION=false yarn babel:build"
-	},
-	"dependencies": {
-		"core-js": "^3.20.1",
-		"express": "^4.17.2"
-	},
-	"devDependencies": {
-		"@babel/cli": "^7.16.0",
-		"@babel/core": "^7.16.5",
-		"@babel/node": "^7.16.5",
-		"@babel/preset-env": "^7.16.5",
-		"nodemon": "^2.0.15"
-	},
-	"engines": {
-		"node": "14.x",
-		"yarn": "1.x"
-	}
+   "name": "node-es6-template",
+   "version": "1.0.0",
+   "private": true,
+   "scripts": {
+      "format:check": "prettier --check .",
+      "format:write": "prettier --write .",
+      "lint:check": "eslint .",
+      "lint:fix": "eslint --fix .",
+      "babel:build": "./node_modules/.bin/babel src --out-dir server",
+      "clean": "rm -rf server",
+      "start": "node server",
+      "dev": "nodemon --exec yarn babel-node -- src",
+      "heroku-postbuild": "YARN_CONFIG_PRODUCTION=false yarn babel:build"
+   },
+   "dependencies": {
+      "config": "^3.3.7",
+      "core-js": "^3.20.1",
+      "cors": "^2.8.5",
+      "express": "^4.17.2",
+      "express-async-errors": "^3.1.1",
+      "http-status-codes": "^2.2.0",
+      "mongoose": "^6.1.8"
+   },
+   "devDependencies": {
+      "@babel/cli": "^7.16.0",
+      "@babel/core": "^7.16.5",
+      "@babel/node": "^7.16.5",
+      "@babel/preset-env": "^7.16.5",
+      "eslint": "^8.7.0",
+      "eslint-config-prettier": "^8.3.0",
+      "nodemon": "^2.0.15",
+      "prettier": "^2.5.1"
+   },
+   "engines": {
+      "node": "16.x",
+      "yarn": "1.x"
+   }
 }

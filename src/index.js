@@ -1,17 +1,19 @@
-import express from 'express';
-import { exit, env } from 'process';
+/* eslint-disable no-console */
+import express from 'express'
+import { exit } from 'process'
+import config from 'config'
 
-const app = express();
+const app = express()
 
-app.get('/', (_req, res) => res.send('Hello Server'));
+app.get('/', (_req, res) => res.send('Hello Server'))
 
 const start = async () => {
-	try {
-		app.listen(env.PORT || 7543, () => console.log('Server listening'));
-	} catch (error) {
-		console.log(error);
-		exit(1);
-	}
-};
+   try {
+      app.listen(config.get('port'), () => console.warn('Server listening'))
+   } catch (error) {
+      console.warn(error)
+      exit(1)
+   }
+}
 
-start();
+start()
